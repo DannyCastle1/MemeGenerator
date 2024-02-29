@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 
 const Meme = () => {
@@ -7,14 +8,24 @@ const Meme = () => {
     bottomText: '',
     randomImage: ''
   })
+  
   const [allMemes, setAllMemes] = useState([])
-  useEffect(()=>{
-    fetch('https://api.imgflip.com/get_memes')
-    .then(res => res.json())
-    .then(data => setAllMemes(data.data.memes))
-  }, [])
 
-    function getMemeImg(){
+  const {isLoading, isError, data} = useQuery({
+      queryKey:['repoData'],
+      queryFn: () =>{
+       return fetch('https://api.imgflip.com/get_memes')
+        .then((res)=> res.json())},  
+      })
+  useEffect(()=>{
+        if(data){
+          setAllMemes(data.data.memes)
+        }}, [data])
+
+    if (isLoading) return (<div>Loading</div>)
+    if (isError) return (<div>error</div>)
+    
+  function getMemeImg(){
         let randomNumber = Math.floor(Math.random() * allMemes.length)
         let url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
