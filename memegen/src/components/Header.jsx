@@ -2,8 +2,10 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <header>
-        <img src='./assets/troll-face.jpg' className='Header--image'/>
+    <header className='header'>
+        <img 
+          src='/src/assets/troll-face.jpg' 
+          className='header--image'/>
         <h2 className='header--title'>Meme Generator</h2>
         <h4 className='header--project'>React Course</h4>
     </header>
