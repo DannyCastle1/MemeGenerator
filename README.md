@@ -1,14 +1,15 @@
 # Meme Generator
 
-This is a random meme generator. It retrieves meme images in JSON format from an API.
+This is a random meme generator. It retrieves popular meme images from an API and can add text to the image on the client.
 
 ## Getting Started
 
 The application uses React to dynamically:
 1. Create two input fields.
-2. Create a button that handles the click event.
+2. Create a button that handles the randomizing.
 3. Makes a fetch request to an API.
 4. Displays the image to the client.
+5. Add the text from the input fields onto the image on screen.
 
 ## Technologies
 
