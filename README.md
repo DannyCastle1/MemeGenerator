@@ -26,5 +26,5 @@ The technologies (and developer dependencies) used for this application were (fo
 To install the application you would need to have Terminal (or Command Prompt for Windows), any IDE of your preference, Node, NPM, and a clone of this repository saved locally. Once you have them installed, navigate in the CLI to where you saved this repository (*ie memegen*) to use the following commands:
 
 >-  cd memegen
->-  npm istall
+>-  npm install
 >-  npm run dev
